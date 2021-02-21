@@ -62,6 +62,7 @@ public class ClienteServiceImpl implements ClienteService {
 		ClienteEntity clienteAlterado = clienteConsultado.get();
 		BeanUtils.copyProperties(clienteDTO, clienteAlterado);
 		clienteRepository.save(clienteAlterado);
+		
 		return new MensagemDTO(CLIENTE_ALTERADO_COM_SUCESSO);
 	}
 
