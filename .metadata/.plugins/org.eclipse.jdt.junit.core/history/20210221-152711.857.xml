@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="ZupEstrelasClienteApplicationTests" project="zup-estrelas-cliente" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="br.com.zup.estrelas.cliente.ZupEstrelasClienteApplicationTests" time="0.176" displayname="ZupEstrelasClienteApplicationTests" uniqueid="[engine:junit-jupiter]/[class:br.com.zup.estrelas.cliente.ZupEstrelasClienteApplicationTests]">
+    <testcase name="contextLoads" classname="br.com.zup.estrelas.cliente.ZupEstrelasClienteApplicationTests" time="0.176" displayname="contextLoads()" uniqueid="[engine:junit-jupiter]/[class:br.com.zup.estrelas.cliente.ZupEstrelasClienteApplicationTests]/[method:contextLoads()]"/>
+  </testsuite>
+</testrun>

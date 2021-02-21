@@ -4,8 +4,6 @@ import javax.validation.constraints.NotNull;
 
 public class ClienteDTO {
 
-	private Long idCliente;
-	
 	@NotNull(message = "O campo não pode ser vazio.")
 	private String nome;
 	
@@ -24,14 +22,6 @@ public class ClienteDTO {
 	@NotNull(message = "O campo não pode ser vazio.")
 	private String endereco;
 
-	public Long getIdCliente() {
-		return idCliente;
-	}
-
-	public void setIdCliente(Long idCliente) {
-		this.idCliente = idCliente;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -46,14 +36,6 @@ public class ClienteDTO {
 
 	public void setIdade(Integer idade) {
 		this.idade = idade;
-	}
-
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
 	}
 
 	public String getEmail() {
@@ -78,6 +60,14 @@ public class ClienteDTO {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 }

@@ -11,7 +11,7 @@ public interface ClienteService {
 	public MensagemDTO adicionarCliente(ClienteDTO clienteDTO);
 
 	public List<ClienteEntity> listarCliente();
-
+	
 	public MensagemDTO atualizarCliente(Long idCliente, ClienteDTO clienteDTO);
 
 	public MensagemDTO removerCliente(Long idCliente);

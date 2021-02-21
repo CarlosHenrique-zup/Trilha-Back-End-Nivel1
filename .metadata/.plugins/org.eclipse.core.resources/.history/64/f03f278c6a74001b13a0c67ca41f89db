@@ -1,0 +1,78 @@
+package br.com.zup.estrelas.cliente.service.impl;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import br.com.zup.estrelas.cliente.dto.ClienteDTO;
+import br.com.zup.estrelas.cliente.dto.MensagemDTO;
+import br.com.zup.estrelas.cliente.repository.ClienteRepository;
+
+@RunWith(MockitoJUnitRunner.class)
+public class ClienteServiceTests {
+
+	private static final String CLIENTE_CADASTRADO_COM_SUCESSO = "";
+	private static final String CLIENTE_ALTERADO_COM_SUCESSO = "";
+	private static final String CLIENTE_INEXISTENTE = "";
+	private static final String CLIENTE_REMOVIDO = "";
+	private static final String CLIENTE_JA_INEXISTENTE = "";
+	
+	@Mock
+	ClienteRepository clienteReository;
+	
+	@InjectMocks
+	ClienteServiceImpl clienteService;
+	
+	private ClienteDTO implementarCliente() {
+		ClienteDTO cliente = new ClienteDTO();
+		cliente.setCpf(1L);
+		cliente.setNome("Fernando");
+		cliente.setIdade(10);
+		cliente.setEmail("Fernando2020@gmail.com.br");
+		cliente.setEndereco("Rua Moreira Pires");
+		
+		return cliente;
+	}
+	
+	@Test
+	public void deveAdicionarClienteComSucesso() {
+		ClienteDTO cliente = implementarCliente();
+		
+		Mockito.when(clienteReository.existsByCpf(cliente.getCpf())).thenReturn(false);
+		
+		MensagemDTO mensagemRetornada = this.clienteService.adicionarCliente(cliente);
+		MensagemDTO mensagemEsperada = new MensagemDTO(CLIENTE_CADASTRADO_COM_SUCESSO);
+	}
+	
+	@Test
+	public void naoDeveAdicionarClienteJaExistente() {
+		
+	}
+	
+	@Test
+	public void deveAlterarUmClienteComSucesso() {
+		
+	}
+	
+	@Test
+	public void naoDeveAlterarUmClienteInexistente() {
+		
+	}
+	
+	@Test
+	public void deveRemoverClienteComSucesso() {
+		
+	}
+	
+	@Test
+	public void naoDeveRemoverClienteInexistente() {
+		
+	}
+	
+	
+	
+	
+}

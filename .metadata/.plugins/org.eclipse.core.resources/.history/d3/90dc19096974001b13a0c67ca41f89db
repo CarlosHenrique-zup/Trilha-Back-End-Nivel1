@@ -1,0 +1,18 @@
+package br.com.zup.estrelas.cliente.service.impl;
+
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
+
+import br.com.zup.estrelas.cliente.repository.ClienteRepository;
+
+@RunWith(MockitoJUnitRunner.class)
+public class ClienteServiceTests {
+
+	@Mock
+	ClienteRepository clienteReository;
+	
+	@InjectMocks
+	ClienteServiceImpl clienteService;
+}

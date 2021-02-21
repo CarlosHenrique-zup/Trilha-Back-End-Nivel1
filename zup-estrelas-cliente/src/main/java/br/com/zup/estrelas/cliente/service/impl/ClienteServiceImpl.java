@@ -17,10 +17,10 @@ import br.com.zup.estrelas.cliente.service.ClienteService;
 public class ClienteServiceImpl implements ClienteService {
 
 	private static final String CLIENTE_ADICIONADO_COM_SUCESSO = "Cliente cadastrado com sucesso!";
-	private static final String CLIENTE_REMOVIDO_COM_SUCESSO = "Cliente removido com sucesso!";
 	private static final String CLIENTE_INEXISTENTE = "Cliente inexistente!";
-	private static final String CLIENTE_JA_EXISTENTE = "Cliente já existe!";
+	private static final String CLIENTE_JA_EXISTENTE = "Cliente já existente!";
 	private static final String CLIENTE_ALTERADO_COM_SUCESSO = "Cliente alterado com sucesso!";
+	private static final String CLIENTE_REMOVIDO_COM_SUCESSO = "Cliente removido com sucesso!";
 
 	@Autowired
 	ClienteRepository clienteRepository;
@@ -43,10 +43,11 @@ public class ClienteServiceImpl implements ClienteService {
 	public List<ClienteEntity> listarCliente() {
 		return (List<ClienteEntity>) clienteRepository.findAll();
 	}
-
+	
 	@Override
 	public MensagemDTO atualizarCliente(Long idCliente, ClienteDTO clienteDTO) {
 		Optional<ClienteEntity> clienteConsultado = clienteRepository.findById(idCliente);
+		ClienteEntity cliente = new ClienteEntity();
 
 		if (clienteConsultado.isEmpty()) {
 			return new MensagemDTO(CLIENTE_INEXISTENTE);
@@ -54,17 +55,18 @@ public class ClienteServiceImpl implements ClienteService {
 
 		ClienteEntity clienteAlterado = clienteConsultado.get();
 		BeanUtils.copyProperties(clienteDTO, clienteAlterado);
-
+		clienteRepository.save(clienteAlterado);
+		
 		return new MensagemDTO(CLIENTE_ALTERADO_COM_SUCESSO);
 	}
 
 	@Override
 	public MensagemDTO removerCliente(Long idCliente) {
 		if(clienteRepository.existsById(idCliente)){
-			clienteRepository.deleteByCpf(idCliente);
+			clienteRepository.deleteById(idCliente);
+			return new MensagemDTO(CLIENTE_REMOVIDO_COM_SUCESSO);
 		}
-		
-		return new MensagemDTO(CLIENTE_REMOVIDO_COM_SUCESSO);
-	}
 
+		return new MensagemDTO(CLIENTE_INEXISTENTE);
+	}
 }

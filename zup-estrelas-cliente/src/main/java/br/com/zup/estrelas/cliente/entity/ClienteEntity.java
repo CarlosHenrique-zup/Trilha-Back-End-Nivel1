@@ -13,6 +13,7 @@ public class ClienteEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_cliente")
 	private Long idCliente;
 	
 	@Column(nullable = false)
@@ -72,14 +73,6 @@ public class ClienteEntity {
 		this.idade = idade;
 	}
 
-	public String getCpf() {
-		return cpf;
-	}
-
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -102,5 +95,13 @@ public class ClienteEntity {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 }
