@@ -54,6 +54,7 @@ public class ClienteServiceImpl implements ClienteService {
 	public MensagemDTO atualizarCliente(Long idCliente, ClienteDTO clienteDTO) {
 		log.info("Entrando no metodo alterar cliente na classe Service: " + clienteDTO);
 		Optional<ClienteEntity> clienteConsultado = clienteRepository.findById(idCliente);
+		ClienteEntity cliente = new ClienteEntity();
 
 		if (clienteConsultado.isEmpty()) {
 			return new MensagemDTO(CLIENTE_INEXISTENTE);

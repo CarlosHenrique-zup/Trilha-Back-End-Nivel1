@@ -49,16 +49,13 @@ public class ClienteController {
 	@PutMapping(path = "/{idCliente}", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public MensagemDTO alterarCliente(@PathVariable Long idCliente, @RequestBody ClienteDTO clienteDTO) {
 		log.info("Entrando no metodo listar cliente no Controller: ");
-		clienteService.atualizarCliente(idCliente, clienteDTO);
-	
-		return new MensagemDTO(CLIENTE_ALTERADO_COM_SUCESSO);
+		return clienteService.atualizarCliente(idCliente, clienteDTO);
 	}
 
 	@DeleteMapping(path = "/{idCliente}", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public MensagemDTO removerCliente(@PathVariable Long idCliente) {
 		log.info("Entrando no metodo listar cliente no Controller: " + idCliente);
-		clienteService.removerCliente(idCliente);
+		return clienteService.removerCliente(idCliente);
 	
-		return new MensagemDTO(CLIENTE_REMOVIDO_COM_SUCESSO);
 	}
 }
