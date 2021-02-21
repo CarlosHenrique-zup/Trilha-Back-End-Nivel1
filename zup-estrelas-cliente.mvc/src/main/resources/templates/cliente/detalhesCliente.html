@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8" />
+<title>Clientes</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet" />
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet"
+	href="materialize/css/materialize.min.css" media="screen,projection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="style/styleCss.css" />
+</head>
+<body>
+	<header>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo">Detalhe do Cliente</a>
+				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/clientes" class="waves-effect waves-light btn"><i
+							class="material-icons left">format_list_bulleted</i>Lista de
+							Clientes</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div th:each="cliente : ${clientes}" class="container">
+			<div class="row">
+				<p>
+					Nome: <span th:text="{cliente.nome}"></span>
+				</p>
+				<p>
+					Email: <span th:text="{cliente.email}"></span>
+				</p>
+				<p>
+					Cpf: <span th:text="{cliente.cpf}"></span>
+				</p>
+				<p>
+					Idade: <span th:text="{cliente.idade}"></span>
+				</p>
+				<p>
+					Endereço: <span th:text="{cliente.endereco}"></span>
+				</p>
+				<p>
+					Telefone: <span th:text="{cliente.telefone}"></span>
+				</p>
+			</div>
+		</div>
+	</header>
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+
+</html>
