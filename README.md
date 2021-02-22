@@ -1,5 +1,5 @@
-# DESAFIO 1 -Implementar Spring MVC substituido o servlet
+# DESAFIO 5 - Implementar logs utilizando o Log4J
 
-O Spring é um dos principais frameworks para Java, com ele o projeto poderá ter um melhor controle de injeção de dependências, além de usá-lo para expor sua API.
+Tanto quanto importante é o funcionamento do sistema são as informações que ele gera de seu funcionamento. Os Logs fornecem para quem for realizar a manutenção do sistema, um detalhamento do que está ocorrendo durante a execução da aplicação, auxiliando a encontrar problemas ou prover auditoria.
 
-Adapte seu projeto para o Spring, utilizando o controle de dependência, quando necessário, e substitua a API de servlets por uma implementação utilizando o Spring
+Implemente Logs em todo projeto, nos pontos que achar necessário, como por exemplo logs de erros, de inicio e fim de execuções, etc. Para isso implemente a utilização da ferramenta Apache Log4J.
