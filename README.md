@@ -1,5 +1,5 @@
-# DESAFIO 1 -Implementar Spring MVC substituido o servlet
+# DESAFIO 2 - Implementar a persistência usando Hibernate e JPA no Spring
 
-O Spring é um dos principais frameworks para Java, com ele o projeto poderá ter um melhor controle de injeção de dependências, além de usá-lo para expor sua API.
+Para diminuir a distância do mundo do banco de dados do mundo orientado a objetos do Java, foi criado o Hibernate e o JPA que abstraem as interações com o banco de dados para uma estrutura orientada a objetos.
 
-Adapte seu projeto para o Spring, utilizando o controle de dependência, quando necessário, e substitua a API de servlets por uma implementação utilizando o Spring
+Utilizando o Spring, implemente a persistência com os mapeamentos e recursos do Hibernate e do JPA. Ao final deve-se poder realizar operações de CRUD persistindo tudo no banco de dados.
