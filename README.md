@@ -1,5 +1,6 @@
-# DESAFIO 1 -Implementar Spring MVC substituido o servlet
+# DESAFIO 4 - Implementar teste unitários
 
-O Spring é um dos principais frameworks para Java, com ele o projeto poderá ter um melhor controle de injeção de dependências, além de usá-lo para expor sua API.
+Teste unitários são de suma importância para que o projeto não apresente muitos bugs e tenha uma vida longa. Eles devem cobrir todas as possibilidades de execução dos métodos, e expor qualquer comportamento inesperado.
 
-Adapte seu projeto para o Spring, utilizando o controle de dependência, quando necessário, e substitua a API de servlets por uma implementação utilizando o Spring
+Implemente testes unitários em todos os métodos que julgar necessário utilizando o JUnit. Não se esqueça de prever as possibilidades de execução do código.
+Garanta pelo menos 75% das linhas do código coberto pelos testes.
