@@ -1,5 +1,0 @@
-package br.com.zup.estrelas.cliente.repository;
-
-public interface ClienteRepository {
-
-}

@@ -1,5 +1,0 @@
-package br.com.zup.estrelas.cliente.dto;
-
-public class MensagemDTO {
-
-}

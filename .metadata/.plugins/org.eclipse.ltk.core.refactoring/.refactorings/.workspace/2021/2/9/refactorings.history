@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;zup-estrelas-cliente.mvc&apos;" deleteContents="true" description="Delete resource &apos;zup-estrelas-cliente.mvc&apos;" element1="/zup-estrelas-cliente.mvc" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1613875928002"/>&#x0A;<refactoring comment="Delete resource &apos;zup-estrelas-cliente&apos;" deleteContents="false" description="Delete resource &apos;zup-estrelas-cliente&apos;" element1="/zup-estrelas-cliente" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1613876016524"/>
-</session>

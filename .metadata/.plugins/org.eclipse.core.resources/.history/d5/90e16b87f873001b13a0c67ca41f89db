@@ -1,5 +1,0 @@
-package br.com.zup.estrelas.cliente.service;
-
-public interface ClienteService {
-
-}
