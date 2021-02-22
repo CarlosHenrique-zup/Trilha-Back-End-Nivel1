@@ -24,7 +24,7 @@ public class ClienteController {
 
 	@Autowired
 	ClienteService clienteService;
-
+	
 	@PostMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
 	public MensagemDTO adicionarCliente(@RequestBody ClienteDTO clienteDTO) {
 		return clienteService.adicionarCliente(clienteDTO);
@@ -35,18 +35,14 @@ public class ClienteController {
 		return clienteService.listarCliente();
 	}
 
-//	@GetMapping(path = "/{cpf}", produces = { MediaType.APPLICATION_JSON_VALUE })
-//	public ClienteEntity consultarClientePeloCpf(@PathVariable Long cpf) {
-//		return clienteService.consultarPeloCpf(cpf);
-//	}
-
-	@PutMapping(path = "/{cpf}", produces = { MediaType.APPLICATION_JSON_VALUE })
-	public MensagemDTO alterarCliente(@PathVariable Long cpf, @RequestBody ClienteDTO clienteDTO) {
-		return clienteService.atualizarCliente(cpf, clienteDTO);
+	@PutMapping(path = "/{idCliente}", produces = { MediaType.APPLICATION_JSON_VALUE })
+	public MensagemDTO alterarCliente(@PathVariable Long idCliente, @RequestBody ClienteDTO clienteDTO) {
+		return clienteService.atualizarCliente(idCliente, clienteDTO);
 	}
 
-	@DeleteMapping(path = "/{cpf}", produces = { MediaType.APPLICATION_JSON_VALUE })
-	public MensagemDTO removerCliente(@PathVariable Long cpf) {
-		return clienteService.removerCliente(cpf);
+	@DeleteMapping(path = "/{idCliente}", produces = { MediaType.APPLICATION_JSON_VALUE })
+	public MensagemDTO removerCliente(@PathVariable Long idCliente) {
+		return clienteService.removerCliente(idCliente);
+	
 	}
 }

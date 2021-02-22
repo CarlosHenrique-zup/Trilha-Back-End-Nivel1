@@ -43,7 +43,7 @@ public class ClienteServiceImpl implements ClienteService {
 	public List<ClienteEntity> listarCliente() {
 		return (List<ClienteEntity>) clienteRepository.findAll();
 	}
-
+	
 	@Override
 	public MensagemDTO atualizarCliente(Long idCliente, ClienteDTO clienteDTO) {
 		Optional<ClienteEntity> clienteConsultado = clienteRepository.findById(idCliente);
@@ -54,17 +54,19 @@ public class ClienteServiceImpl implements ClienteService {
 
 		ClienteEntity clienteAlterado = clienteConsultado.get();
 		BeanUtils.copyProperties(clienteDTO, clienteAlterado);
-
+		clienteRepository.save(clienteAlterado);
+		
 		return new MensagemDTO(CLIENTE_ALTERADO_COM_SUCESSO);
 	}
 
 	@Override
 	public MensagemDTO removerCliente(Long idCliente) {
 		if(clienteRepository.existsById(idCliente)){
-			clienteRepository.deleteByCpf(idCliente);
+			clienteRepository.deleteById(idCliente);
+			return new MensagemDTO(CLIENTE_REMOVIDO_COM_SUCESSO);
 		}
-		
-		return new MensagemDTO(CLIENTE_REMOVIDO_COM_SUCESSO);
+
+		return new MensagemDTO(CLIENTE_INEXISTENTE);
 	}
 
 }
